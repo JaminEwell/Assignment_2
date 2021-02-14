@@ -23,9 +23,8 @@ class ProductFilter extends React.Component {
     }
   }
 
-  class ProductRow extends React.Component {
-    render() {
-        const product = this.props.product;
+  function ProductRow(props)  {
+        const product = props.product;
         return (
           <tr>
             <td>{product.id}</td>
@@ -35,13 +34,11 @@ class ProductFilter extends React.Component {
             <td>{product.image}</td>
           </tr>
         );
-      }
   }
 
   
-  class ProductTable extends React.Component {
-    render() {
-        const productRows = this.props.products.map(product =>
+  function ProductTable(props){
+        const productRows = props.products.map(product =>
           <ProductRow key={product.id} product={product} />
         );
     
@@ -60,8 +57,7 @@ class ProductFilter extends React.Component {
               {productRows}
             </tbody>
           </table>
-        );
-      }
+        )
   }
   
   class ProductAdd extends React.Component {
@@ -93,7 +89,7 @@ class ProductFilter extends React.Component {
         <input type="text" name="price" placeholder="Price Per Unit" />
         <input type="text" name="category" placeholder="Category" />
         <input type="text" name="image" placeholder="Image URL" />
-        <button>Add</button>
+        <button>Add Product</button>
       </form>
         
       );
@@ -119,10 +115,10 @@ class ProductFilter extends React.Component {
 
       createProduct(product) {
         product.id = this.state.products.length + 1;
-        product.name = this.state.products.name;
-        product.price = this.state.products.price;
-        product.category = this.state.products.category;
-        product.image = this.state.products.image;
+        //product.name = this.state.products.name;
+        //product.price = this.state.products.price;
+        //product.category = this.state.products.category;
+       // product.image = this.state.products.image;
         const newProductList = this.state.products.slice();
         newProductList.push(product);
         this.setState({ products: newProductList });
