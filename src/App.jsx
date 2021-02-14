@@ -1,4 +1,4 @@
-const products = [
+const initialProducts = [
     {
       id: 1, name: 'V-neck shirt', price: 10, category: 'Shirts',
       image: 'link to image'
@@ -13,7 +13,7 @@ const products = [
 class ProductFilter extends React.Component {
     render() {
       return (
-        <div>This is a placeholder for the product filter.</div>
+        <div>Showing all available products</div>
       );
     }
   }
@@ -35,8 +35,23 @@ class ProductFilter extends React.Component {
 
   
   class ProductTable extends React.Component {
+    constructor() {
+        super();
+        this.state = { products: [] };
+      }
+
+      componentDidMount() {
+        this.loadData();
+      }
+    
+      loadData() {
+        setTimeout(() => {
+          this.setState({ products: initialProducts });
+        }, 500);
+      }
+
     render() {
-        const productRows = products.map(product =>
+        const productRows = this.state.products.map(product =>
           <ProductRow key={product.id} product={product} />
         );
     
@@ -62,7 +77,7 @@ class ProductFilter extends React.Component {
   class ProductAdd extends React.Component {
     render() {
       return (
-        <div>This is a placeholder for a form to add an product.</div>
+        <div>Add a new product to inventory</div>
       );
     }
   }

@@ -22,7 +22,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var products = [{
+var initialProducts = [{
   id: 1,
   name: 'V-neck shirt',
   price: 10,
@@ -50,7 +50,7 @@ var ProductFilter = /*#__PURE__*/function (_React$Component) {
   _createClass(ProductFilter, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for the product filter.");
+      return /*#__PURE__*/React.createElement("div", null, "Showing all available products");
     }
   }]);
 
@@ -85,15 +85,37 @@ var ProductTable = /*#__PURE__*/function (_React$Component3) {
   var _super3 = _createSuper(ProductTable);
 
   function ProductTable() {
+    var _this;
+
     _classCallCheck(this, ProductTable);
 
-    return _super3.apply(this, arguments);
+    _this = _super3.call(this);
+    _this.state = {
+      products: []
+    };
+    return _this;
   }
 
   _createClass(ProductTable, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.loadData();
+    }
+  }, {
+    key: "loadData",
+    value: function loadData() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        _this2.setState({
+          products: initialProducts
+        });
+      }, 500);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var productRows = products.map(function (product) {
+      var productRows = this.state.products.map(function (product) {
         return /*#__PURE__*/React.createElement(ProductRow, {
           key: product.id,
           product: product
@@ -122,7 +144,7 @@ var ProductAdd = /*#__PURE__*/function (_React$Component4) {
   _createClass(ProductAdd, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for a form to add an product.");
+      return /*#__PURE__*/React.createElement("div", null, "Add a new product to inventory");
     }
   }]);
 
