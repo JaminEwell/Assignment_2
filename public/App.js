@@ -22,6 +22,20 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+var products = [{
+  id: 1,
+  name: 'V-neck shirt',
+  price: 10,
+  category: 'Shirts',
+  image: 'link to image'
+}, {
+  id: 2,
+  name: 'Green Shorts',
+  price: 15,
+  category: 'Jeans',
+  image: 'link to image'
+}];
+
 var ProductFilter = /*#__PURE__*/function (_React$Component) {
   _inherits(ProductFilter, _React$Component);
 
@@ -57,12 +71,8 @@ var ProductRow = /*#__PURE__*/function (_React$Component2) {
   _createClass(ProductRow, [{
     key: "render",
     value: function render() {
-      var style = this.props.rowStyle;
-      return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
-        style: style
-      }, this.props.product_id), /*#__PURE__*/React.createElement("td", {
-        style: style
-      }, this.props.product_title));
+      var product = this.props.product;
+      return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, product.id), /*#__PURE__*/React.createElement("td", null, product.name), /*#__PURE__*/React.createElement("td", null, product.price), /*#__PURE__*/React.createElement("td", null, product.category), /*#__PURE__*/React.createElement("td", null, product.image));
     }
   }]);
 
@@ -83,27 +93,15 @@ var ProductTable = /*#__PURE__*/function (_React$Component3) {
   _createClass(ProductTable, [{
     key: "render",
     value: function render() {
-      var rowStyle = {
-        border: "1px solid silver",
-        padding: 4
-      };
+      var productRows = products.map(function (product) {
+        return /*#__PURE__*/React.createElement(ProductRow, {
+          key: product.id,
+          product: product
+        });
+      });
       return /*#__PURE__*/React.createElement("table", {
-        style: {
-          borderCollapse: "collapse"
-        }
-      }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
-        style: rowStyle
-      }, "ID"), /*#__PURE__*/React.createElement("th", {
-        style: rowStyle
-      }, "Title"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement(ProductRow, {
-        rowStyle: rowStyle,
-        product_id: 1,
-        product_title: "Error in console when clicking Add"
-      }), /*#__PURE__*/React.createElement(ProductRow, {
-        rowStyle: rowStyle,
-        product_id: 2,
-        product_title: "Missing bottom border on panel"
-      })));
+        className: "bordered-table"
+      }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "ID"), /*#__PURE__*/React.createElement("th", null, "Product Name"), /*#__PURE__*/React.createElement("th", null, "Price"), /*#__PURE__*/React.createElement("th", null, "Category"), /*#__PURE__*/React.createElement("th", null, "Image"))), /*#__PURE__*/React.createElement("tbody", null, productRows));
     }
   }]);
 

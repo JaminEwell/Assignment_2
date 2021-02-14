@@ -1,3 +1,15 @@
+const products = [
+    {
+      id: 1, name: 'V-neck shirt', price: 10, category: 'Shirts',
+      image: 'link to image'
+    },
+    {
+        id: 2, name: 'Green Shorts', price: 15, category: 'Jeans',
+        image: 'link to image'
+    },
+  ];
+
+
 class ProductFilter extends React.Component {
     render() {
       return (
@@ -8,33 +20,39 @@ class ProductFilter extends React.Component {
 
   class ProductRow extends React.Component {
     render() {
-      const style = this.props.rowStyle;
-      return (
-        <tr>
-          <td style={style}>{this.props.product_id}</td>
-          <td style={style}>{this.props.product_title}</td>
-        </tr>
-      );
-    }
+        const product = this.props.product;
+        return (
+          <tr>
+            <td>{product.id}</td>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+            <td>{product.category}</td>
+            <td>{product.image}</td>
+          </tr>
+        );
+      }
   }
 
   
   class ProductTable extends React.Component {
     render() {
-        const rowStyle = {border: "1px solid silver", padding: 4};
+        const productRows = products.map(product =>
+          <ProductRow key={product.id} product={product} />
+        );
+    
         return (
-          <table style={{borderCollapse: "collapse"}}>
+          <table className="bordered-table">
             <thead>
               <tr>
-                <th style={rowStyle}>ID</th>
-                <th style={rowStyle}>Title</th>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Image</th>
               </tr>
             </thead>
             <tbody>
-              <ProductRow rowStyle={rowStyle} product_id={1}
-                product_title="Error in console when clicking Add" />
-              <ProductRow rowStyle={rowStyle} product_id={2}
-                product_title="Missing bottom border on panel" />
+              {productRows}
             </tbody>
           </table>
         );
