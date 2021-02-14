@@ -36,64 +36,110 @@ var ProductFilter = /*#__PURE__*/function (_React$Component) {
   _createClass(ProductFilter, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for the issue filter.");
+      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for the product filter.");
     }
   }]);
 
   return ProductFilter;
 }(React.Component);
 
-var ProductTable = /*#__PURE__*/function (_React$Component2) {
-  _inherits(ProductTable, _React$Component2);
+var ProductRow = /*#__PURE__*/function (_React$Component2) {
+  _inherits(ProductRow, _React$Component2);
 
-  var _super2 = _createSuper(ProductTable);
+  var _super2 = _createSuper(ProductRow);
+
+  function ProductRow() {
+    _classCallCheck(this, ProductRow);
+
+    return _super2.apply(this, arguments);
+  }
+
+  _createClass(ProductRow, [{
+    key: "render",
+    value: function render() {
+      var style = this.props.rowStyle;
+      return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+        style: style
+      }, this.props.product_id), /*#__PURE__*/React.createElement("td", {
+        style: style
+      }, this.props.product_title));
+    }
+  }]);
+
+  return ProductRow;
+}(React.Component);
+
+var ProductTable = /*#__PURE__*/function (_React$Component3) {
+  _inherits(ProductTable, _React$Component3);
+
+  var _super3 = _createSuper(ProductTable);
 
   function ProductTable() {
     _classCallCheck(this, ProductTable);
 
-    return _super2.apply(this, arguments);
+    return _super3.apply(this, arguments);
   }
 
   _createClass(ProductTable, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for a table of issues.");
+      var rowStyle = {
+        border: "1px solid silver",
+        padding: 4
+      };
+      return /*#__PURE__*/React.createElement("table", {
+        style: {
+          borderCollapse: "collapse"
+        }
+      }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
+        style: rowStyle
+      }, "ID"), /*#__PURE__*/React.createElement("th", {
+        style: rowStyle
+      }, "Title"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement(ProductRow, {
+        rowStyle: rowStyle,
+        product_id: 1,
+        product_title: "Error in console when clicking Add"
+      }), /*#__PURE__*/React.createElement(ProductRow, {
+        rowStyle: rowStyle,
+        product_id: 2,
+        product_title: "Missing bottom border on panel"
+      })));
     }
   }]);
 
   return ProductTable;
 }(React.Component);
 
-var ProductAdd = /*#__PURE__*/function (_React$Component3) {
-  _inherits(ProductAdd, _React$Component3);
+var ProductAdd = /*#__PURE__*/function (_React$Component4) {
+  _inherits(ProductAdd, _React$Component4);
 
-  var _super3 = _createSuper(ProductAdd);
+  var _super4 = _createSuper(ProductAdd);
 
   function ProductAdd() {
     _classCallCheck(this, ProductAdd);
 
-    return _super3.apply(this, arguments);
+    return _super4.apply(this, arguments);
   }
 
   _createClass(ProductAdd, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for a form to add an issue.");
+      return /*#__PURE__*/React.createElement("div", null, "This is a placeholder for a form to add an product.");
     }
   }]);
 
   return ProductAdd;
 }(React.Component);
 
-var ProductList = /*#__PURE__*/function (_React$Component4) {
-  _inherits(ProductList, _React$Component4);
+var ProductList = /*#__PURE__*/function (_React$Component5) {
+  _inherits(ProductList, _React$Component5);
 
-  var _super4 = _createSuper(ProductList);
+  var _super5 = _createSuper(ProductList);
 
   function ProductList() {
     _classCallCheck(this, ProductList);
 
-    return _super4.apply(this, arguments);
+    return _super5.apply(this, arguments);
   }
 
   _createClass(ProductList, [{
