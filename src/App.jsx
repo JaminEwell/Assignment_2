@@ -129,7 +129,15 @@ class ProductFilter extends React.Component {
         //product.name = this.state.products.name;
         product.price = '$' + product.price;
         //product.category = this.state.products.category;
-       // product.image = this.state.products.image;
+        product.image = <a href="https://images.unsplash.com/photo-1564315254352-f33b576102a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">View</a>
+        //var a = document.createElement('a');
+        //var text = document.createTextNode("View");
+        //a.appendChild(text);
+       // product.image = a;
+        //product.image.appendChild(text);
+        //product.image.href = product.image
+        //var td = document.createElement('td');
+        //product.image = tbody.innerHTML.appendChild(a);
         const newProductList = this.state.products.slice();
         newProductList.push(product);
         this.setState({ products: newProductList });

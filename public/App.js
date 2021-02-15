@@ -196,7 +196,17 @@ var ProductList = /*#__PURE__*/function (_React$Component3) {
       product.id = this.state.products.length + 1; //product.name = this.state.products.name;
 
       product.price = '$' + product.price; //product.category = this.state.products.category;
-      // product.image = this.state.products.image;
+
+      product.image = /*#__PURE__*/React.createElement("a", {
+        href: "https://images.unsplash.com/photo-1564315254352-f33b576102a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+      }, "View"); //var a = document.createElement('a');
+      //var text = document.createTextNode("View");
+      //a.appendChild(text);
+      // product.image = a;
+      //product.image.appendChild(text);
+      //product.image.href = product.image
+      //var td = document.createElement('td');
+      //product.image = tbody.innerHTML.appendChild(a);
 
       var newProductList = this.state.products.slice();
       newProductList.push(product);
