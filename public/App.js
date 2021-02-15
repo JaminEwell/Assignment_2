@@ -124,23 +124,32 @@ var ProductAdd = /*#__PURE__*/function (_React$Component2) {
       return /*#__PURE__*/React.createElement("form", {
         name: "productAdd",
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/React.createElement("input", {
-        type: "text",
-        name: "name",
-        placeholder: "Product Name"
-      }), /*#__PURE__*/React.createElement("input", {
+      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Add a new product to inventory")), /*#__PURE__*/React.createElement("lable", null, "Category"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("select", {
+        id: "category",
+        name: "category"
+      }, /*#__PURE__*/React.createElement("option", {
+        value: "shirts"
+      }, "Shirts"), /*#__PURE__*/React.createElement("option", {
+        value: "jeans"
+      }, "Jeans"), /*#__PURE__*/React.createElement("option", {
+        value: "jackets"
+      }, "Jackets"), /*#__PURE__*/React.createElement("option", {
+        value: "sweaters"
+      }, "Sweaters"), /*#__PURE__*/React.createElement("option", {
+        value: "accessories"
+      }, "Accessories")), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("lable", null, "Price Per Unit"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "text",
         name: "price",
-        placeholder: "Price Per Unit"
-      }), /*#__PURE__*/React.createElement("input", {
+        placeholder: "$"
+      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("lable", null, "Product Name"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "text",
-        name: "category",
-        placeholder: "Category"
-      }), /*#__PURE__*/React.createElement("input", {
+        name: "name",
+        placeholder: ""
+      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("lable", null, "Image URL"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "text",
         name: "image",
-        placeholder: "Image URL"
-      }), /*#__PURE__*/React.createElement("button", null, "Add Product"));
+        placeholder: ""
+      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", null, "Add Product"));
     }
   }]);
 

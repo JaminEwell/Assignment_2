@@ -85,10 +85,21 @@ class ProductFilter extends React.Component {
     render() {
       return (
       <form name="productAdd" onSubmit={this.handleSubmit}>
-        <input type="text" name="name" placeholder="Product Name" />
-        <input type="text" name="price" placeholder="Price Per Unit" />
-        <input type="text" name="category" placeholder="Category" />
-        <input type="text" name="image" placeholder="Image URL" />
+        <div><strong>Add a new product to inventory</strong></div>
+        <lable>Category</lable><br/> 
+        <select id="category" name="category">
+          <option value="shirts">Shirts</option>
+          <option value="jeans">Jeans</option>
+          <option value="jackets">Jackets</option>
+          <option value="sweaters">Sweaters</option>
+          <option value="accessories">Accessories</option>
+        </select><br/>
+        <lable>Price Per Unit</lable><br/>
+        <input type="text" name="price" placeholder="$" /><br/>
+        <lable>Product Name</lable><br/>
+        <input type="text" name="name" placeholder="" /><br/>
+        <lable>Image URL</lable><br/>
+        <input type="text" name="image" placeholder="" /><br/>
         <button>Add Product</button>
       </form>
         
