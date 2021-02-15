@@ -25,7 +25,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 var initialProducts = [{
   id: 1,
   name: 'V-neck shirt',
-  price: 10,
+  price: '$' + 10.99,
   category: 'Shirts',
   image: /*#__PURE__*/React.createElement("a", {
     href: "https://images.unsplash.com/photo-1598032895397-b9472444bf93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
@@ -33,7 +33,7 @@ var initialProducts = [{
 }, {
   id: 2,
   name: 'Green Shorts',
-  price: 15,
+  price: '$' + 16.99,
   category: 'Jeans',
   image: /*#__PURE__*/React.createElement("a", {
     href: "https://images.pexels.com/photos/5693888/pexels-photo-5693888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -41,7 +41,7 @@ var initialProducts = [{
 }];
 var sampleProduct = {
   name: 'Red Shorts',
-  price: 19,
+  price: '$' + 6.99,
   category: 'Jeans',
   image: /*#__PURE__*/React.createElement("a", {
     href: "https://images.unsplash.com/photo-1597343781704-dc11f4ffd419?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlZCUyMHNob3J0c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -124,28 +124,28 @@ var ProductAdd = /*#__PURE__*/function (_React$Component2) {
       return /*#__PURE__*/React.createElement("form", {
         name: "productAdd",
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Add a new product to inventory")), /*#__PURE__*/React.createElement("lable", null, "Category"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("select", {
+      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("u", null, "Add a new product to inventory")), /*#__PURE__*/React.createElement("b", null, "Category"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("select", {
         id: "category",
         name: "category"
       }, /*#__PURE__*/React.createElement("option", {
-        value: "shirts"
+        value: "Shirts"
       }, "Shirts"), /*#__PURE__*/React.createElement("option", {
-        value: "jeans"
+        value: "Jeans"
       }, "Jeans"), /*#__PURE__*/React.createElement("option", {
-        value: "jackets"
+        value: "Jackets"
       }, "Jackets"), /*#__PURE__*/React.createElement("option", {
-        value: "sweaters"
+        value: "Sweaters"
       }, "Sweaters"), /*#__PURE__*/React.createElement("option", {
-        value: "accessories"
-      }, "Accessories")), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("lable", null, "Price Per Unit"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+        value: "Accessories"
+      }, "Accessories")), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("b", null, "Price Per Unit"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "text",
         name: "price",
         placeholder: "$"
-      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("lable", null, "Product Name"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("b", null, "Product Name"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "text",
         name: "name",
         placeholder: ""
-      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("lable", null, "Image URL"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+      }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("b", null, "Image URL"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "text",
         name: "image",
         placeholder: ""
@@ -194,8 +194,8 @@ var ProductList = /*#__PURE__*/function (_React$Component3) {
     key: "createProduct",
     value: function createProduct(product) {
       product.id = this.state.products.length + 1; //product.name = this.state.products.name;
-      //product.price = this.state.products.price;
-      //product.category = this.state.products.category;
+
+      product.price = '$' + product.price; //product.category = this.state.products.category;
       // product.image = this.state.products.image;
 
       var newProductList = this.state.products.slice();
